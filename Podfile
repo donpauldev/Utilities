@@ -2,11 +2,11 @@
 # platform :ios, '9.0'
 use_frameworks!
 
-target 'dalleel' do
+target 'Utilities' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
 	
 use_frameworks!
-# Pods for dalleel
+# Pods for Utilities
 
 	pod 'Alamofire'
 	pod 'AFNetworking'
@@ -16,8 +16,5 @@ use_frameworks!
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'SDWebImage'
-
-	
-
 	
 end
