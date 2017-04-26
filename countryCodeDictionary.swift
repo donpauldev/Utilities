@@ -1,4 +1,22 @@
-func countryCodeDictionary() -> [AnyHashable: Any] {
+//
+//  Utilities.swift
+//  Utilities Swift
+//
+//  Created by Don Paul on 06/03/16.
+//  Copyright © 2016. All rights reserved.
+//
+import Foundation
+import UIKit
+
+public class ISOCode
+{
+    
+    /*-----------------------------------------------------------------------*/
+    
+    // MARK: - Alert Colors
+    
+    
+    class func countryCodeDictionary() -> [AnyHashable: Any] {
     return [
     "IL" : "972",
     "BQ" : "599",
@@ -252,4 +270,5 @@ func countryCodeDictionary() -> [AnyHashable: Any] {
     "VN" : "84",
     "VG" : "1",
     "VI" : "1"
+}
 }
