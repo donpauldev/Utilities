@@ -1,6 +1,6 @@
 //
-//  Utilities.swift
-//  Utilities Swift
+//  CountryCodeDictionary.swift
+//  CountryCodeDictionary Swift
 //
 //  Created by Don Paul on 06/03/16.
 //  Copyright © 2016. All rights reserved.
