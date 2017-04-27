@@ -1,0 +1,45 @@
+Appstore upload Requirement
+
+Support url: A URL with support information for your app. This URL will be visible on the App Store.
+
+Marketing url: A URL with marketing information about your app. This URL will be visible on the App Store.
+
+App description: A description of your app, detailing features and functionality.
+
+Copyright: The name of the person or entity that owns the exclusive rights to your app, preceded by the year the rights were obtained (for example, "2008 Acme Inc."). Do not provide a URL.
+
+
+First name
+Last name
+Address
+Placemark(optional)
+City
+State
+Pincode
+Country
+Phone number
+Email
+
+Notes:Additional information about your app that can help during the review process. Include information that may be needed to test your app, such as app-specific settings.
+
+App icon 1024 x 1024
+
+The iPhone 6 and iPhone 6 Plus screenshots don't accept cropped (without status bar) uploads.
+
+5.5in (iPhone 6 Plus):
+1242 × 2208px portrait
+
+4.7in (iPhone 6):
+750 × 1334px portrait
+
+4in (iPhone 5 and 5s):
+640 × 1096px portrait (without status bar) minimum
+640 × 1136px portrait (full screen) maximum
+1136 × 600px landscape (without status bar) minimum
+1136 × 640px landscape (full screen) minimum
+
+3.5in (iPhone 4 and 4s):
+640 × 920px portrait (without status bar) minimum
+640 × 960px portrait (full screen) maximum
+960 × 600px landscape (without status bar) minimum
+960 × 640px landscape (full screen) maximum
