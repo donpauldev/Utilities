@@ -1,9 +1,9 @@
 //
-//  Reachability.swift
-//  Azool
+//  Utilities.swift
+//  Utilities Swift
 //
-//  Created by DON PAUL PM on 15/05/17.
-//  Copyright © 2017 donpaulpm. All rights reserved.
+//  Created by Don Paul on 06/03/16.
+//  Copyright © 2016. All rights reserved.
 //
 
 import Foundation
