@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import PCLBlurEffectAlert
 
 
 protocol GetResultResponse {
@@ -20,6 +21,7 @@ class GetRespone: NSObject {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var delegete:GetResultResponse?
     var shared = SharedInstance.sharedData
+    var retryCount:Int = 5
    
     func webServiceCall(param:[String : Any],tpye:NSString) {
         
@@ -30,9 +32,13 @@ class GetRespone: NSObject {
                 mainController = presentedViewController
                 
             }
+            
             if isInternetAvailable(){
                 
                 let ulr =  NSURL(string:tpye as String)
+                
+                print("\nurl\(String(describing: ulr))\n\(param)")
+                
                 Alamofire.request(ulr! as URL , method: .post, parameters: param  , encoding: URLEncoding(destination: .methodDependent), headers: nil).responseJSON { (response:DataResponse<Any>) in
                     switch(response.result) {
                         
@@ -42,38 +48,70 @@ class GetRespone: NSObject {
                             
                             print(data)
                             let json = data as! NSDictionary
-                            let status = json.value(forKey: "status") as! Bool
-                            if status{
+                            let status = json.value(forKey: "status") as! NSString
+                            if (status == "0"){
                                 
                                 self.delegete?.GetServiceRespone(param: json)
                                 
                             }else{
                                 
-                                Utilities.AlertAction(Title: "Error", Message: json.value(forKey: "msg") as? String ?? "Error Founded")
+                                self.delegete?.GetServiceRespone(param: json)
                                 
                             }
                             
                         }
                         break
                     case .failure(_):
+                        if self.retryCount == 0 {
+                            self.retryCount = 5
+                            Utilities.AlertAction(Title: "Sorry", Message: "Maximum tries over Please Check your internet Connection or contact Customer care.")
+                            
+                        }else {
                         
-                        Utilities.AlertAction(Title: "Error", Message: response.result.error as? String ?? "Please check your Internet connection")
+                            var retryStr = String()
+                            if self.retryCount == 5 {
+                                retryStr = "Retry"
+                            }else{
+                                retryStr = "Retry (\(self.retryCount))"
+                            }
+                        let alertController = PCLBlurEffectAlertController(title: "Error", message: response.result.error as? String ?? "Sorry please try after sometime", effect: UIBlurEffect(style: .light ), style: .alert)
+                        alertController.configure(titleColor: UIColor.black)
+                        alertController.configure(messageColor: UIColor.black)
+                        alertController.configure(cornerRadius: 10)
+                        let retry = PCLBlurEffectAlertAction(title: retryStr, style: .cancel) { _ in
+                            self.retryCount = self.retryCount-1
+                            self.webServiceCall(param: param, tpye: tpye)
+                            
+                        }
                         
+                        alertController.addAction(retry)
+                        alertController.show()
+                        }
                         break
-                      
+                        
                         
                     }
                     
                 }
                 
             }else{
-                
-            Utilities.AlertAction(Title: "Error", Message: "Please add your  device in a Internet connection")
-             
+                let alertController = PCLBlurEffectAlertController(title: "Sorry", message: "Please check your Internet connection", effect: UIBlurEffect(style: .light ), style: .alert)
+                alertController.configure(titleColor: UIColor.black)
+                alertController.configure(messageColor: UIColor.black)
+                alertController.configure(cornerRadius: 10)
+                let retry = PCLBlurEffectAlertAction(title: "Retry", style: .cancel) { _ in
+                    
+                    self.webServiceCall(param: param, tpye: tpye)
+                    
+                }
+                alertController.addAction(retry)
+                alertController.show()
             }
             
         }
         
     }
+    
+
 
 }
