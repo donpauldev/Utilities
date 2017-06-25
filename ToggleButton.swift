@@ -1,6 +1,6 @@
 //
-//  Utilities.swift
-//  Utilities Swift
+//  ToggleButton
+//  ToggleButton.swift
 //
 //  Created by Don Paul on 06/06/17.
 //  Copyright © 2017. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SAFollowButton: UIButton {
+class ToggleButton: UIButton {
     
     var isOn = false
     
