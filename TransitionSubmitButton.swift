@@ -1,3 +1,11 @@
+//
+//  TransitionSubmitButton.swift
+//  TransitionSubmitButton Swift
+//
+//  Created by Don Paul on 15/02/17.
+//  Copyright © 2017. All rights reserved.
+//
+
 import Foundation
 import UIKit
 
