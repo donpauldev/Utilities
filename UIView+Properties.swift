@@ -1,6 +1,6 @@
 //
 //  UIView+Properties.swift
-//  Azool
+//  UIView+Properties Swift
 //
 //  Created by DON PAUL PM on 15/05/17.
 //  Copyright © 2017 donpaulpm. All rights reserved.
