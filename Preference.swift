@@ -1,6 +1,6 @@
 //
-//  Utilities.swift
-//  Utilities Swift
+//  Preference.swift
+//  Preference Swift
 //
 //  Created by Don Paul on 06/03/16.
 //  Copyright © 2016. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class DB
+public class Preference
 {
     
     /*-----------------------------------------------------------------------*/
