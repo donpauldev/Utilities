@@ -12,7 +12,7 @@ use_frameworks!
 	pod 'AFNetworking'
 	pod 'Google/SignIn'
 	pod "PCLBlurEffectAlert"
-	pod 'Cosmos', '~> 8.0'
+	pod 'Cosmos'
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'SDWebImage'
