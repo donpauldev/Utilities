@@ -1,0 +1,10 @@
+framework module Utilities {
+  umbrella header "Utilities.h"
+
+  export *
+  module * { export * }
+}
+
+module Utilities.Swift {
+    header "Utilities-Swift.h"
+}
