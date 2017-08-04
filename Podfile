@@ -8,13 +8,15 @@ target 'Utilities' do
 use_frameworks!
 # Pods for Utilities
 
-	pod 'Alamofire'
-	pod 'AFNetworking'
 	pod 'Google/SignIn'
-	pod "PCLBlurEffectAlert"
-	pod 'Cosmos'
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
-	pod 'SDWebImage'
+	pod 'Cosmos', '~> 9.0'
+	pod 'Alamofire', '~> 4.0'
+	pod 'IQKeyboardManagerSwift', '~>4.0.9'
+	pod 'SDWebImage', '~>3.8'
+	pod 'DropDown', '~>2.0'
+	pod 'PCLBlurEffectAlert', '~>2.1.1'
+	pod 'TOCropViewController', '~>2.0.12'
 	
 end
