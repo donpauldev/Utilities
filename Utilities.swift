@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import PCLBlurEffectAlert
+import LocalAuthentication
+
+
 struct ScreenSize
 {
     static let SCREEN_WIDTH = UIScreen.mainScreen().bounds.size.width
@@ -108,7 +111,38 @@ public class Utilities
         group.motionEffects = [xMortion, yMortion]
         view.addMotionEffect(group)
     }
-
     
-
+    /*-----------------------------------------------------------------------*/
+    
+    // MARK: - Authentication
+    
+    class func authenticateUser() {
+        let authContext : LAContext = LAContext()
+        var error: NSError?
+        let reson:String = "Biometric Check for application"
+        
+        if authContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error){
+            authContext.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: reson, reply: {successful, error -> Void in
+                if successful{
+                    print("TouchID Yes")
+                }
+                else{
+                    print("TouchID No")
+                }
+            }
+            )
+        }
+        else{
+            authContext.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Enter your Passcode", reply: {
+                successful,error in
+                if successful{
+                    print("PassCode Yes")
+                }
+                else{
+                    print("PassCode No")
+                }
+            }
+            )
+        }
+    }
 }
