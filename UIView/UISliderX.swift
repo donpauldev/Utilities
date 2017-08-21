@@ -23,6 +23,7 @@ class UISliderX: UISlider {
         }
     }
     
+    // View set up
     func setupView() {
         setThumbImage(thumbImage, for: .normal)
         
